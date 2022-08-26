@@ -1,4 +1,4 @@
-#屏蔽ios系统更新
+# 屏蔽ios系统更新
 
 DOMAIN,mesu.apple.com,REJECT
 DOMAIN,gdmf.apple.com,REJECT
