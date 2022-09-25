@@ -1,6 +1,6 @@
 # 屏蔽ios系统更新
 
-DOMAIN,mesu.apple.com,REJECT
-DOMAIN,gdmf.apple.com,REJECT
-DOMAIN,updates-http.cdn-apple.com,REJECT
-DOMAIN,xp.apple.com,REJECT
+HOST, mesu.apple.com, BlockiosUpdate
+HOST, gdmf.apple.com, BlockiosUpdate
+HOST, updates-http.cdn-apple.com, BlockiosUpdate
+HOST, xp.apple.com, BlockiosUpdate
