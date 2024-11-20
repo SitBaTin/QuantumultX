@@ -1,0 +1,6 @@
+[Mitm]
+hostname = 18hlw.com
+  
+#155fun.com黑料网去广告
+  
+^https:\/\/18hlw\.com response-body-replace-regex <style> <style>.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}
