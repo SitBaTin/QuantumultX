@@ -1,27 +1,21 @@
-/**
- * 抖音去除底部加号按钮
- * Quantumult X 脚本
- */
-
+// dy_remove_plus.js
 let body = $response.body;
+
 try {
     let obj = JSON.parse(body);
+    console.log("✅ 原始 tab_list 数量: " + obj?.tab_list?.length);
 
-    if (obj && obj.tab_list) {
+    if (obj?.tab_list) {
         obj.tab_list = obj.tab_list.filter(tab => {
-            // 过滤掉包含“plus”或“upload”字段的按钮
             return !(tab.tab_name === "plus" || tab.tab_name?.includes("upload") || tab.label === "+");
         });
 
-        // 重新排序 index（可选）
-        obj.tab_list.forEach((tab, index) => {
-            tab.tab_id = index;
-        });
+        console.log("✅ 处理后 tab_list 数量: " + obj.tab_list.length);
     }
 
-    body = JSON.stringify(obj);
-} catch (e) {
-    console.log("抖音去加号处理失败: " + e);
-}
+    $done({ body: JSON.stringify(obj) });
 
-$done({ body });
+} catch (e) {
+    console.log("❌ 抖音去加号脚本异常: " + e);
+    $done({});
+}
